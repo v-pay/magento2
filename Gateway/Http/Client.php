@@ -17,15 +17,6 @@ use VirtualPay\Payment\Helper\Data;
 
 class Client
 {
-    public const STATUS_UNDEFINED = 'undefined';
-
-    public const STATUS_APPROVED = 'approved';
-    public const STATUS_DENIED = 'denied';
-
-    public const STATUS_REASON_EMAIL_VALIDATION = 'EmailValidation';
-    public const STATUS_REASON_PROVIDER_REVIEW = 'ProviderReview';
-    public const STATUS_REASON_FIRST_PAYMENT = 'FirstPayment';
-
     /**
      * @var Data
      */

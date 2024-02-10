@@ -17,7 +17,6 @@ use Magento\Framework\Exception\LocalizedException;
 use VirtualPay\Payment\Helper\Data as HelperData;
 use VirtualPay\Payment\Gateway\Http\Client;
 use VirtualPay\Payment\Gateway\Http\Client\Api;
-use VirtualPay\Payment\Model\Ui\CreditCard\ConfigProvider as CcConfigProvider;
 use Magento\Framework\App\Config\Initial;
 use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\Framework\App\Helper\Context;
@@ -40,19 +39,13 @@ use Magento\Store\Model\App\Emulation;
 
 class Order extends \Magento\Payment\Helper\Data
 {
-    const STATUS_APPROVED = 6;
+    const STATUS_PAID = 'paid';
 
-    const STATUS_PENDING = 4;
+    const STATUS_PENDING = 'pending';
 
-    const STATUS_DENIED = 7;
+    const STATUS_DENIED = 'denied';
 
-    const STATUS_REFUNDED = 89;
-
-    const STATUS_CONTESTATION = 24;
-
-    const STATUS_CHARGEBACK = 24;
-
-    const STATUS_MONITORING = 87;
+    const STATUS_REFUNDED = 'refund';
 
     const DEFAULT_QRCODE_WIDTH = 400;
     const DEFAULT_QRCODE_HEIGHT = 400;
@@ -195,7 +188,7 @@ class Order extends \Magento\Payment\Helper\Data
             $order->addCommentToStatusHistory(__('Callback received %1 -> %2', $orderStatus, $virtualpayStatus));
 
             if ($virtualpayStatus != $orderStatus) {
-                if ($virtualpayStatus == self::STATUS_APPROVED) {
+                if ($virtualpayStatus == self::STATUS_PAID) {
                     if ($order->canInvoice()) {
                         $this->invoiceOrder($order, $amount);
                     }
@@ -217,9 +210,6 @@ class Order extends \Magento\Payment\Helper\Data
                 }
 
                 $payment->setAdditionalInformation('status', $virtualpayStatus);
-                if (isset($content['status_name'])) {
-                    $payment->setAdditionalInformation('status_name', $content['status_name']);
-                }
             }
 
             $this->orderRepository->save($order);

@@ -33,27 +33,26 @@ class Index extends Webhook
             $params = $this->getRequest()->getParams();
             $this->logParams($content, $params);
 
-            if (isset($content['transaction'])) {
-                $method = 'virtualpay-payments';
-                $transaction = $params['transaction'];
-                $orderIncrementId = $transaction['order_number'] ?? $transaction['free'];
-                if (isset($transaction['status_id'])) {
-                    $virtualpayStatus = $transaction['status_id'];
-                    $order = $this->helperOrder->loadOrder($transaction['order_number']);
+            if (isset($content['transaction_id'])) {
+                $method = 'virtualpay';
+                $orderIncrementId = $content['transaction_reference'];
+                if (isset($content['status'])) {
+                    $order = $this->helperOrder->loadOrder($content['transaction_reference']);
                     if ($order->getId()) {
+                        $virtualpayStatus = $content['status'];
                         $method = $order->getPayment()->getMethod();
-                        $amount = $transaction['price_original'] ?? $order->getGrandTotal();
-                        $this->helperOrder->updateOrder($order, $virtualpayStatus, $transaction, $amount, true);
+                        $amount = $order->getGrandTotal();
+                        $this->helperOrder->updateOrder($order, $virtualpayStatus, $content, $amount, true);
                         $statusCode = 200;
                     }
                 }
 
                 /** @var \VirtualPay\Payment\Model\Callback $callBack */
                 $callBack = $this->callbackFactory->create();
-                $callBack->setStatus($transaction['status_name'] ?? '');
+                $callBack->setStatus($content['status'] ?? '');
                 $callBack->setMethod($method);
                 $callBack->setIncrementId($orderIncrementId);
-                $callBack->setPayload($this->json->serialize($params));
+                $callBack->setPayload($this->json->serialize($content));
                 $this->callbackResourceModel->save($callBack);
             }
         } catch (\Exception $e) {
