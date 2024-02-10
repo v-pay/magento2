@@ -1,7 +1,5 @@
 # VirtualPay - Adobe Commerce 
 
-# VirtualPay Integration
-
 Bem-vindo ao repositório da ferramenta de integração Magento / Adobe Commerce com VirtualPay! Esta ferramenta permite uma integração fácil e eficiente com a plataforma VirtualPay, proporcionando uma experiência de pagamento suave em sua aplicação.
 
 ## Pré-requisitos

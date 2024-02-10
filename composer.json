@@ -1,5 +1,5 @@
 {
-    "name": "virtualpay/magento2-payments",
+    "name": "v-pay/magento2",
     "description": "VirtualPay Payment Method for Magento 2.3+",
     "type": "magento2-module",
     "version": "1.0.1",
