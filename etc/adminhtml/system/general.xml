@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    VirtualPay
+ * @package     VirtualPay_Payment
+ *
+ */
+-->
+
+<include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
+    <group id="virtualpay_general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>General</label>
+
+        <group id="global_credencials" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Credentials and General Settings</label>
+            <comment>Credentials used for all VirtualPay services, if you don't have the private key, contact us.</comment>
+
+            <field id="token" translate="label" type="obscure" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Token</label>
+                <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                <config_path>virtualpay/general/token</config_path>
+                <comment>Insert here the token used for authenticate your transaction, that token can be found in your VirtualPay Account</comment>
+            </field>
+
+            <field id="use_sandbox" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Use Sandbox</label>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                <config_path>virtualpay/general/use_sandbox</config_path>
+                <comment><![CDATA[If enabled, the transaction will be done in VirtualPay's test environment]]></comment>
+            </field>
+
+            <field id="cancel_unapproved_orders" translate="label" type="select" sortOrder="47" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Cancel Unapproved Orders</label>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                <config_path>payment/general/cancel_unapproved_orders</config_path>
+                <comment><![CDATA[Order unapproved will be automatically cancelled]]></comment>
+            </field>
+
+            <field id="show_payment_info" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Show Payment Info at Success Page</label>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                <config_path>virtualpay/general/show_payment_info</config_path>
+                <comment><![CDATA[If your store shows the payment info at success page, DON'T enable this feature]]></comment>
+            </field>
+
+            <field id="debug" translate="label" type="select" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Enable Log Requests</label>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                <config_path>virtualpay/general/debug</config_path>
+            </field>
+        </group>
+
+        <group id="virtualpay_webhook" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Webhooks</label>
+            <comment><![CDATA[It's necessary to create a webhook on Virtual Pay's Panel<br>
+            When creating the webhook, it'll generate a TOKEN to be used as a security header in every transaction<br>
+            Insert that header in this section in order to automate the webhook process, otherwise, approval and cancellation will be manual.<br>
+            <p class="note">The Webhook URL to be saved on Virtual Page's pane is:<br>
+            <strong>Webhook URL:</strong> <code>{{base_url}}/virtualpay/webhook</code></p>]]></comment>
+            <frontend_model>Magento\Config\Block\System\Config\Form\Fieldset</frontend_model>
+
+            <field id="webhook_token" translate="label" type="obscure" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Webhook Token</label>
+                <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                <config_path>virtualpay/general/webhook_token</config_path>
+                <comment>Insert here the token used for authenticate your transaction, that token can be found in your VirtualPay Account</comment>
+            </field>
+        </group>
+
+    </group>
+</include>

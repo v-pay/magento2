@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * @category    VirtualPay
+ * @package     VirtualPay_Payment
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="VirtualPay_Payment::css/checkout.css" />
+        <script src="VirtualPay_Payment::js/payments.js" />
+    </head>
+    <body>
+        <referenceContainer name="order.success.additional.info">
+            <block class="VirtualPay\Payment\Block\Checkout\Success"
+                   name="virtualpay.payment.success"
+                   template="VirtualPay_Payment::checkout/success.phtml"
+                   cacheable="false"
+                   ifconfig="virtualpay/general/show_payment_info"
+            />
+        </referenceContainer>
+    </body>
+</page>

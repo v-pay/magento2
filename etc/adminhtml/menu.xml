@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    VirtualPay
+ * @package     VirtualPay_Payment
+ *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+
+        <add id="VirtualPay_Payment::menu"
+             title="VirtualPay"
+             module="VirtualPay_Payment"
+             sortOrder="10000"
+             parent="Magento_Sales::sales"
+             resource="VirtualPay_Payment::menu"
+        />
+
+        <add id="VirtualPay_Payment::callbacks"
+             title="Callbacks"
+             module="VirtualPay_Payment"
+             sortOrder="10"
+             parent="VirtualPay_Payment::menu"
+             resource="VirtualPay_Payment::callbacks"
+             action="virtualpay/callback/grid"
+        />
+
+        <add id="VirtualPay_Payment::requests"
+             title="Requests e Responses"
+             module="VirtualPay_Payment"
+             sortOrder="40"
+             parent="VirtualPay_Payment::menu"
+             resource="VirtualPay_Payment::requests"
+             action="virtualpay/request/grid"
+        />
+
+        <add id="VirtualPay_Payment::payment_methods"
+             title="Settings"
+             module="VirtualPay_Payment"
+             sortOrder="1000"
+             resource="VirtualPay_Payment::settings"
+             parent="VirtualPay_Payment::menu"
+             action="adminhtml/system_config/edit/section/payment/"
+         />
+    </menu>
+</config>

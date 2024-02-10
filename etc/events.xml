@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    VirtualPay
+ * @package     VirtualPay_Payment
+ *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="payment_method_assign_data_virtualpay_pix">
+        <observer name="virtualpay_pix_data_assign" instance="VirtualPay\Payment\Observer\DataAssignObserver" />
+    </event>
+
+    <event name="checkout_submit_before">
+        <observer name="virtualpay_checkout_submit_before" instance="VirtualPay\Payment\Observer\CheckoutSubmitBefore" />
+    </event>
+</config>

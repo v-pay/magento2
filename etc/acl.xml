@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    VirtualPay
+ * @package     VirtualPay_Payment
+ *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Sales::sales">
+                    <resource id="VirtualPay_Payment::menu" title="VirtualPay" translate="title" sortOrder="1000">
+                        <resource id="VirtualPay_Payment::callbacks" title="CallBacks"/>
+                        <resource id="VirtualPay_Payment::requests" title="Requests e Responses"/>
+                        <resource id="VirtualPay_Payment::settings" title="Settings"/>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

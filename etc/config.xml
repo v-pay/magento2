@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    VirtualPay
+ * @package     VirtualPay_Payment
+ *
+ *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <virtualpay>
+            <general>
+                <platform_id>31636639-3834-5530-b063-356233323131</platform_id>
+                <sandbox_platform_id>31333166-3663-5963-b134-666466303630</sandbox_platform_id>
+                <show_payment_info>0</show_payment_info>
+                <cancel_unapproved_orders>1</cancel_unapproved_orders>
+                <debug>1</debug>
+            </general>
+            <address>
+                <street>0</street>
+                <number>1</number>
+                <complement>2</complement>
+                <district>3</district>
+            </address>
+            <endpoints>
+                <uri>https://painel.virtualpay.com.br.</uri>
+                <uri_sandbox>https://sandbox.virtualpay.com.br</uri_sandbox>
+                <payments>
+                    <create>api/v1/transaction/pix/cashin</create>
+                    <get><![CDATA[api/v1/transaction/{transaction_id}]]></get>
+                </payments>
+            </endpoints>
+        </virtualpay>
+        <payment>
+            <virtualpay_pix>
+                <active>0</active>
+                <model>VirtualPayPixFacade</model>
+                <title>Pix</title>
+                <checkout_instructions>Você receberá o QRCode para efetuar o pagamento após finalizar o pedido</checkout_instructions>
+                <payment_action>order</payment_action>
+                <order_status>pending</order_status>
+                <paid_order_status>processing</paid_order_status>
+                <paid_virtual_order_status>complete</paid_virtual_order_status>
+                <cancelled_order_status>canceled</cancelled_order_status>
+                <allowspecific>0</allowspecific>
+                <specificcountry>BR</specificcountry>
+                <min_order_total>1</min_order_total>
+                <!-- Method config -->
+                <is_gateway>1</is_gateway>
+                <can_use_checkout>1</can_use_checkout>
+                <can_use_internal>1</can_use_internal>
+                <can_order>1</can_order>
+                <can_capture>0</can_capture>
+                <can_capture_partial>0</can_capture_partial>
+                <can_refund_partial_per_invoice>0</can_refund_partial_per_invoice>
+                <can_cancel>0</can_cancel>
+                <can_refund>0</can_refund>
+                <can_void>0</can_void>
+                <can_edit>0</can_edit>
+                <paymentInfoKeys>transaction_id,payment_link,reference,platform</paymentInfoKeys>
+                <privateInfoKeys>transaction_id,payment_link,reference,platform</privateInfoKeys>
+            </virtualpay_pix>
+        </payment>
+    </default>
+</config>
+
