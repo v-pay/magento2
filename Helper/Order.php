@@ -272,7 +272,13 @@ class Order extends \Magento\Payment\Helper\Data
             $order->getStoreId()
         ) ?: false;
 
-        $order->addCommentToStatusHistory(__('The order %1 was cancelled. Amount of %2', $cancelledStatus, $amount));
+        $this->helperData->log(__(
+            'Order %1 was cancelled: status: %2 - amount: %3', $order->getIncrementId(), $cancelledStatus, $amount)
+        );
+
+        if ($cancelledStatus) {
+            $order->addCommentToStatusHistory(__('The order was cancelled.'), $cancelledStatus);
+        }
 
         return $order;
     }
