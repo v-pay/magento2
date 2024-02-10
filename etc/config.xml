@@ -30,8 +30,8 @@
                 <district>3</district>
             </address>
             <endpoints>
-                <uri>https://painel.virtualpay.com.br.</uri>
-                <uri_sandbox>https://sandbox.virtualpay.com.br</uri_sandbox>
+                <uri>https://painel.virtualpay.com.br/</uri>
+                <uri_sandbox>https://sandbox.virtualpay.com.br/</uri_sandbox>
                 <payments>
                     <create>api/v1/transaction/pix/cashin</create>
                     <get><![CDATA[api/v1/transaction/{transaction_id}]]></get>
