@@ -43,6 +43,8 @@ class Order extends \Magento\Payment\Helper\Data
 
     const STATUS_PENDING = 'pending';
 
+    const STATUS_CANCELED = 'canceled';
+
     const STATUS_DENIED = 'denied';
 
     const STATUS_REFUNDED = 'refund';
@@ -202,10 +204,12 @@ class Order extends \Magento\Payment\Helper\Data
                 } elseif (
                     $this->helperData->getGeneralConfig('cancel_unapproved_orders', $order->getStoreId())
                 ) {
-                    if ($virtualpayStatus == self::STATUS_DENIED) {
+                    if (
+                        $virtualpayStatus == self::STATUS_CANCELED
+                        || $virtualpayStatus == self::STATUS_DENIED
+                        || $virtualpayStatus == self::STATUS_REFUNDED
+                    ) {
                         $order = $this->cancelOrder($order, $amount, $callback);
-                    } elseif ($virtualpayStatus == self::STATUS_REFUNDED) {
-                        $order = $this->refundOrder($order, $amount, $callback);
                     }
                 }
 
