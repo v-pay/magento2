@@ -27,13 +27,5 @@
                 </action>
             </referenceBlock>
         </referenceContainer>
-
-        <referenceContainer name="order_totals">
-            <block class="VirtualPay\Payment\Block\Sales\Order\Totals\Interest" name="virtualpay_interest">
-                <action method="setBeforeCondition">
-                    <argument name="condition" xsi:type="string">shipping</argument>
-                </action>
-            </block>
-        </referenceContainer>
     </body>
 </page>

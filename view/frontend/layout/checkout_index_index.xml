@@ -47,9 +47,5 @@
                 </argument>
             </arguments>
         </referenceBlock>
-
-        <referenceContainer name="before.body.end">
-            <block class="VirtualPay\Payment\Block\Checkout\Fingerprint" template="VirtualPay_Payment::checkout/fingerprint.phtml" name="virtualpay.payment.fingerprint" after="-"/>
-        </referenceContainer>
     </body>
 </page>
