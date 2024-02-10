@@ -20,6 +20,7 @@
 
 namespace VirtualPay\Payment\Observer;
 
+use Magento\Quote\Api\Data\CartInterface;
 use VirtualPay\Payment\Model\Ui\Pix\ConfigProvider;
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
@@ -55,6 +56,7 @@ class CheckoutSubmitBefore implements ObserverInterface
             $quote->getPayment()
             && $quote->getPayment()->getMethod() == ConfigProvider::CODE
         ) {
+            $quote->unsetData(CartInterface::KEY_RESERVED_ORDER_ID);
             $quote->reserveOrderId();
             $this->quoteRepository->save($quote);
         }

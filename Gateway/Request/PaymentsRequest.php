@@ -122,7 +122,7 @@ class PaymentsRequest
     {
         $storeName = $this->helper->getStoreName();
         $remoteIp = $order->getRemoteIp();
-        return sprintf('Order %s from %s: IP: %s', $order->getIncrementId(), $storeName, $remoteIp);
+        return sprintf('Order %s from %s with IP %s', $order->getIncrementId(), $storeName, $remoteIp);
     }
 
     protected function getCustomerPhoneNumber(Order $order): string

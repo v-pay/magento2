@@ -62,13 +62,13 @@ class TransactionHandler implements HandlerInterface
         $paymentData = $handlingSubject['payment'];
         $transaction = $response['transaction'];
 
-        if ((isset($response['status_code']) && $response['status_code'] >= 300) || !isset($transaction['data_response'])) {
+        if ((isset($response['status_code']) && $response['status_code'] >= 300) || !isset($transaction['transaction'])) {
             throw new LocalizedException(__('There was an error processing your request.'));
         }
 
         /** @var $payment \Magento\Sales\Model\Order\Payment */
         $payment = $paymentData->getPayment();
-        $responseTransaction = $transaction['data_response']['transaction'];
+        $responseTransaction = array_first($transaction['transaction']);
         $payment = $this->helperOrder->updateDefaultAdditionalInfo($payment, $responseTransaction);
         $payment = $this->helperOrder->updatePixAdditionalInfo($payment, $responseTransaction);
         $payment->setIsTransactionClosed(false);
