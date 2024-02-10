@@ -3,10 +3,9 @@
 
 define(
     [
-        'Magento_Checkout/js/view/payment/default',
-        'VirtualPay_Payment/js/fingerprint',
+        'Magento_Checkout/js/view/payment/default'
     ],
-    function (Component, fingerprint) {
+    function (Component) {
         'use strict';
 
         return Component.extend({
@@ -29,12 +28,10 @@ define(
             },
 
             getData: function() {
-                fingerprint(window.checkoutConfig.payment[this.getCode()].sandbox);
                 return {
                     'method': this.item.method,
                     'additional_data': {
-                        'taxvat': this.taxvat(),
-                        'fingerprint': window.yapay?.FingerPrint()?.getFingerPrint() || ''
+                        'taxvat': this.taxvat()
                     }
                 };
             },
