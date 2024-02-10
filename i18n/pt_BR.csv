@@ -1,0 +1,58 @@
+"VirtualPay - Callbacks","VirtualPay - Callbacks"
+"Callback List","Lista de Callback"
+"Request List","Lista de Requisições"
+"Content","Conteúdo"
+Params,"Parâmetros"
+"Webhook %1","Webhook %1"
+"Payment data object should be provided","O objeto de dados de pagamento deve ser fornecido"
+"There was an error processing your request.","Houve um erro ao processar sua solicitação."
+"The transaction is taking longer than expected, please try again in a few moments","A transação está demorando mais do que o esperado, tente novamente em alguns momentos"
+"Callback received %1 -> %2","Callback recebido %1 -> %2"
+"Your payment for the order %1 was confirmed","Seu pagamento para o pedido %1 foi confirmado"
+"The order %1 was cancelled. Amount of %2","O pedido %1 foi cancelado. Valor de %2"
+"The order had the amount refunded by VirtualPay. Amount of %1","O pedido teve o valor reembolsado pela VirtualPay. Valor de %1"
+"Item with id ""%1"" does not exist.","Item com id ""%1"" não existe."
+"Could not save the callback info: %1","Não foi possível salvar as informações de callback: %1"
+"Could not save the request info: %1","Não foi possível salvar as informações de requisição: %1"
+"Not Available","Não Disponível"
+ID,ID
+Status,Status
+Payload,Payload
+"Created At","Criado em"
+QRCode,QRCode
+"Chosen payment method","Método de pagamento escolhido"
+"Copied!","Copiado!"
+"Copy code","Copiar código"
+"Customer Taxvat","CPF/CNPJ do Cliente"
+"Place Order","Finalizar Pedido"
+VirtualPay,VirtualPay
+General,General
+"Credentials and General Settings","Credenciais e Configurações Gerais"
+Token,Token
+"Use Sandbox","Usar Ambiente de Testes"
+"If enabled, the transaction will be done in VirtualPay's test environment","Se habilitado, a transação será feita no ambiente de testes da VirtualPay"
+"Cancel Unapproved Orders","Cancelar Pedidos Não Aprovados"
+"Show Payment Info at Success Page","Mostrar Informações de Pagamento na Página de Sucesso"
+"If your store shows the payment info at success page, DON'T enable this feature","Se sua loja mostra as informações de pagamento na página de sucesso, NÃO habilite esta funcionalidade"
+"Enable Log Requests","Habilitar Log de Requisições"
+Webhooks,Webhooks
+"Webhook Token","Token do Webhook"
+Pix,Pix
+Enabled,Habilitado
+Title,Título
+"Checkout Instructions","Instruções no Checkout"
+"Instructions to be shown in checkout's page, it can be HTML","Instruções a serem mostradas na página de checkout."
+"New Order Status","Status de Novos Pedidos"
+"Paid Order Status","Status de Pedidos Pagos"
+"Paid Virtual Order Status","Status de Pedidos Virtuais Pagos"
+"Sort Order","Ordem de Exibição"
+"Payment From Applicable Countries","Pagamento disponível para Países Aplicáveis"
+"Payment From Specific Countries","Pagamento disponível para Países Específicos"
+"Minimum Order Total","Total Mínimo do Pedido"
+"Maximum Order Total","Total Máximo do Pedido"
+Method,Método
+"Increment ID","ID do Pedido"
+"Created","Creado em"
+"Status Code","Código de Status"
+Request,Request
+Response,Response

@@ -1,0 +1,58 @@
+"VirtualPay - Callbacks","VirtualPay - Callbacks"
+"Callback List","Callback List"
+"Request List","Request List"
+Content,Content
+Params,Params
+"Webhook %1","Webhook %1"
+"Payment data object should be provided","Payment data object should be provided"
+"There was an error processing your request.","There was an error processing your request."
+"The transaction is taking longer than expected, please try again in a few moments","The transaction is taking longer than expected, please try again in a few moments"
+"Callback received %1 -> %2","Callback received %1 -> %2"
+"Your payment for the order %1 was confirmed","Your payment for the order %1 was confirmed"
+"The order %1 was cancelled. Amount of %2","The order %1 was cancelled. Amount of %2"
+"The order had the amount refunded by VirtualPay. Amount of %1","The order had the amount refunded by VirtualPay. Amount of %1"
+"Item with id ""%1"" does not exist.","Item with id ""%1"" does not exist."
+"Could not save the callback info: %1","Could not save the callback info: %1"
+"Could not save the request info: %1","Could not save the request info: %1"
+"Not Available","Not Available"
+ID,ID
+Status,Status
+Payload,Payload
+"Created At","Created At"
+QRCode,QRCode
+"Chosen payment method","Chosen payment method"
+Copied!,Copied!
+"Copy code","Copy code"
+"Customer Taxvat","Customer Taxvat"
+"Place Order","Place Order"
+VirtualPay,VirtualPay
+General,General
+"Credentials and General Settings","Credentials and General Settings"
+Token,Token
+"Use Sandbox","Use Sandbox"
+"If enabled, the transaction will be done in VirtualPay's test environment","If enabled, the transaction will be done in VirtualPay's test environment"
+"Cancel Unapproved Orders","Cancel Unapproved Orders"
+"Show Payment Info at Success Page","Show Payment Info at Success Page"
+"If your store shows the payment info at success page, DON'T enable this feature","If your store shows the payment info at success page, DON'T enable this feature"
+"Enable Log Requests","Enable Log Requests"
+Webhooks,Webhooks
+"Webhook Token","Webhook Token"
+Pix,Pix
+Enabled,Enabled
+Title,Title
+"Checkout Instructions","Checkout Instructions"
+"Instructions to be shown in checkout's page, it can be HTML","Instructions to be shown in checkout's page, it can be HTML"
+"New Order Status","New Order Status"
+"Paid Order Status","Paid Order Status"
+"Paid Virtual Order Status","Paid Virtual Order Status"
+"Sort Order","Sort Order"
+"Payment From Applicable Countries","Payment From Applicable Countries"
+"Payment From Specific Countries","Payment From Specific Countries"
+"Minimum Order Total","Minimum Order Total"
+"Maximum Order Total","Maximum Order Total"
+Method,Method
+"Increment ID","Increment ID"
+Created,Created
+"Status Code","Status Code"
+Request,Request
+Response,Response
